@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Notes</title>
+<style>
+  body { font-family: sans-serif; background: #fdf6f0; margin: 0; padding: 20px; }
+  h1 { text-align: center; color: #7a3e9d; }
+  input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; margin-bottom: 16px; }
+  .card { background: white; padding: 16px; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(0,0,0,.1); }
+  .card a { display: inline-block; margin-top: 8px; margin-right: 8px; color: #7a3e9d; }
+</style>
+</head>
+<body>
+  <h1>📚 My Notes</h1>
+  <input id="search" placeholder="Search notes...">
+
+  <div class="card">
+    <h3>Data Structures Notes</h3>
+    <p>Arrays, stacks, queues and more.</p>
+    <a href="PASTE-PDF-LINK-HERE">📖 View PDF</a>
+  </div>
+
+  <div class="card">
+    <h3>C Programs</h3>
+    <p>Practice programs for beginners.</p>
+    <a href="PASTE-PDF-LINK-HERE">📖 View PDF</a>
+  </div>
+
+<script>
+  document.getElementById('search').addEventListener('input', function () {
+    var q = this.value.toLowerCase();
+    document.querySelectorAll('.card').forEach(function (c) {
+      c.style.display = c.innerText.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
